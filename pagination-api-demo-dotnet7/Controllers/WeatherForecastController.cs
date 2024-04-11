@@ -48,7 +48,7 @@ namespace pagination_api_demo_dotnet7.Controllers
             {
                 if (!string.IsNullOrWhiteSpace(pagingParams.SearchText))
                 {
-                    weather = weather.Where(x => x.Summary.Contains(pagingParams.SearchText.ToLowerInvariant()));
+                    weather = weather.Where(x => x.Summary.ToLowerInvariant().Contains(pagingParams.SearchText.ToLowerInvariant()));
                 }
 
                 if (!string.IsNullOrWhiteSpace(pagingParams.SortBy))
